@@ -14,6 +14,7 @@ class Solution {
         */
 
         //2nd approach
+        /*
          for(int i=0;i< nums.length ;i++)
         {
             if((nums[i]>=10 && nums[i]<=99) ||
@@ -25,5 +26,26 @@ class Solution {
              }
         }
            return countEventNo;
+        */
+
+        for(int i=0;i<nums.length;i++)
+        {
+            if(countNoOfDigits(nums[i]))
+                countEventNo++;
+        }
+        return countEventNo;
+    }
+
+    public boolean countNoOfDigits(int no)
+    {
+        //[12,345,2,6,7896]
+        //7896 789 78  8
+        int  digit=0;
+        while(no!=0)
+        {
+            no= no/10;
+            digit++;
+        }
+        return digit%2==0;
     }
 }
