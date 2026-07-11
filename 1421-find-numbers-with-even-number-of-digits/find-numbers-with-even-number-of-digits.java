@@ -28,9 +28,22 @@ class Solution {
            return countEventNo;
         */
 
+        /*
+        Approach 3
+
         for(int i=0;i<nums.length;i++)
         {
             if(countNoOfDigits(nums[i]))
+                countEventNo++;
+        }
+        return countEventNo;
+
+        */
+
+        for(int i=0;i<nums.length;i++)
+        {
+            int digit = (int) Math.floor(Math.log10(nums[i]))+1;
+            if(digit%2==0)
                 countEventNo++;
         }
         return countEventNo;
